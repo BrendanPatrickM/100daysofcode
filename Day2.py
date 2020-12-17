@@ -13,7 +13,7 @@ bill = float(inp_bill)
 tip = float(inp_tip)
 people = int (inp_people)
 
-#calculate the percent
+#put percent in the form 1.*
 percent  = float(1 + tip/100)
 
 each_person = float(bill/people)
