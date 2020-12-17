@@ -4,5 +4,7 @@
 Following the syllabus from https://100daysofpython.dev
 
 Day 1: Name Generator
+
 Day 2: Tip and Bill share calculator.
+
 Day 3:
