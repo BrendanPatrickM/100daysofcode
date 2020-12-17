@@ -7,4 +7,4 @@ Day 1: Name Generator
 
 Day 2: Tip and Bill share calculator.
 
-Day 3:
+Day 3: Choose your own adventure
