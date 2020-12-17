@@ -21,7 +21,7 @@ ____/______/______/______/______/_____"=.o|o_.--""___/______/______/______/____
 *******************************************************************************
 ''')
 print("Welcome to Treasure Island.")
-print("Your mission is to find the treasure.")
+print("Your mission is to find the treasure.\n --------")
 print('\n\nYou are standing on a cliff edge.\nThe wind blows against your right cheek\n\n ')
 
 direction = input ("-- Which direction would you like to go: LEFT or RIGHT?--\n")
@@ -34,7 +34,7 @@ else:
   if wait.lower() != "wait" :
     print ('\nYou drown and die. \nGAME OVER ')
   else:
-    print ('You cross without incident.\nYou stand before a tower with three doors;\n RED, BLUE, or YELLOW')
+    print ('\n You cross without incident.\n\nYou stand before a tower with three doors;\n RED, BLUE, or YELLOW')
     door = input ('-- Which door would would you like to choose? --\n')
     if door.lower() =="red":
       print('\nThe room is filled with fire.')
@@ -46,5 +46,3 @@ else:
       print ('\nYOU WIN, YOU FOUND THE TREASURE')
     else:
       print('GAME OVER')
-
-      
