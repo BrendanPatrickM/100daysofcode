@@ -9,4 +9,18 @@ Day 2: Tip and Bill share calculator.
 
 Day 3: Choose your own adventure
 
-Day 4: Terminal Rock Paper Scissors 
+Day 4: Terminal Rock Paper Scissors
+
+Day 5:
+
+Day 6:
+
+Day 7:
+
+Day 8:
+
+Day 9:
+
+Day 10:Calculator
+
+Day 11: Capstone Project
