@@ -19,8 +19,6 @@ def days_in_month(year,month):
   else:
     num_days = month_days[month-1]
     return num_days
- len()
-
 
 
 #🚨 Do NOT change any of the code below

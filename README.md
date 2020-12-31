@@ -24,3 +24,7 @@ Day 9:
 Day 10:Calculator
 
 Day 11: Capstone Project
+
+Day 12:
+
+Day 13: higher or lower game
