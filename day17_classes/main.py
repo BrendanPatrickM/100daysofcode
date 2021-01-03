@@ -8,7 +8,7 @@ question_bank = []
 for item in question_data:
     question_text = item['text']
     question_answer = item['answer']
-    new_question = Question(question_text,question_answer)
+    new_question = Question(question_text, question_answer)
     question_bank.append(new_question)
 
 quiz_master = QuizBrain(question_bank)
