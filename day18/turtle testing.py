@@ -5,7 +5,8 @@ timmy = turtle.Turtle()
 
 timmy.shape('arrow')
 turtle.colormode(255)
-colours = ['pale turquoise','light sky blue','orange red','deep sky blue','misty rose']
+colours = ['pale turquoise', 'light sky blue', 'orange red', 'deep sky blue',
+           'misty rose']
 
 
 # def draw_shape(sides):
@@ -22,23 +23,20 @@ colours = ['pale turquoise','light sky blue','orange red','deep sky blue','misty
 #     draw_shape(sides)
 #
 def random_color():
-    r = random.randint(0,255)
-    g = random.randint(0,255)
-    b = random.randint(0,255)
+    r = random.randint(0, 255)
+    g = random.randint(0, 255)
+    b = random.randint(0, 255)
     random_color = (r, g, b)
     return random_color
 
 
 angles = [0, 90, 180, 270]
 timmy.pensize(10)
-#timmy.speed(0)
+# timmy.speed(0)
 for _ in range(100):
     timmy.color(random_color())
     timmy.setheading(random.choice(angles))
     timmy.forward(30)
-
-
-
 
 screen = turtle.Screen()
 screen.exitonclick()
