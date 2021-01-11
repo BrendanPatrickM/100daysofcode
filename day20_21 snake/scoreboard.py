@@ -3,22 +3,35 @@ ALIGNMENT = "center"
 FONT = ("Courier", 24, "normal")
 
 
-class ScoreBoard(Turtle):
+class Scoreboard(Turtle):
+
     def __init__(self):
         super().__init__()
         self.score = 0
+        self.high_score = 0
+        self.color("white")
         self.penup()
-        self.hideturtle()
         self.goto(0, 270)
-        self.shapesize(stretch_len=2, stretch_wid=2)
-        self.color('white')
-        self.update_score()
+        self.hideturtle()
+        self.update_scoreboard()
+        print(self.high_score)
 
-    def update_score(self):
+    def update_scoreboard(self):
         self.clear()
-        self.write(f"SCORE: {self.score}", False, ALIGNMENT, FONT)
-        self.score += 1
+        self.write(f"SCORE: {self.score} HIGH SCORE: {self.high_score}", align=ALIGNMENT, font=FONT)
 
-    def game_over(self):
-        self.goto(0, 0)
-        self.write("GAME OVER", False, ALIGNMENT, FONT)
+    def increase_score(self):
+        self.score += 1
+        self.update_scoreboard()
+
+    def reset(self):
+        if self.score > self.high_score:
+            print('if')
+            self.high_score = self.score
+            self.score = 0
+            self.update_scoreboard()
+
+
+    # def game_over(self):
+    #     self.goto(0, 0)
+    #     self.write("GAME OVER", align=ALIGNMENT, font=FONT)
