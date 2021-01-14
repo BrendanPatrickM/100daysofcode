@@ -10,7 +10,7 @@ turtle.shape(IMAGE)
 data = pandas.read_csv('50_states.csv')
 all_states = data.state.to_list()
 guessed_states = []
-missed_states = []
+# missed_states = []
 
 
 while len(guessed_states) < 50:
@@ -28,11 +28,12 @@ while len(guessed_states) < 50:
         # item() vetches only the value
         tim.write(state_row.state.item())
 
-for state in all_states:
-    if state in guessed_states:
-        pass
-    else:
-        missed_states.append(state)
+missed_states = [state for state in all_states if state not in guessed_states]
+# for state in all_states:
+#     if state in guessed_states:
+#         pass
+#     else:
+#         missed_states.append(state)
 
 missed_datafield = pandas.DataFrame(missed_states)
 missed_datafield.to_csv('States_to_Learn.csv')
