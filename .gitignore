@@ -4,3 +4,4 @@ day22 pong/__pycache__/scoreboard.cpython-39.pyc
 day26/.DS_Store
 day26/poetry.lock
 day26/pyproject.toml
+.gitignore
