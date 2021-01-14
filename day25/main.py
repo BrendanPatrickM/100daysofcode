@@ -9,5 +9,5 @@ data_dict = {
     'Count': [grey_count, red_count, black_count]
 }
 
-df = pandas.DataFrame(data_dict) 
+df = pandas.DataFrame(data_dict)
 df.to_csv('Squirrel_Count.csv')
