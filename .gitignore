@@ -5,3 +5,8 @@ day26/.DS_Store
 day26/poetry.lock
 day26/pyproject.toml
 .gitignore
+
+day27/.vscode/settings.json
+day28/.DS_Store
+day28/pomodoro-start/.vscode/settings.json
+.gitignore
