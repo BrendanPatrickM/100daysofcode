@@ -1,6 +1,6 @@
 PLACEHOLDER = "[name]"
 
-with open('Input/Names/invited_names.txt', 'r') as names_file:
+with open('Input/Names/invited_names.txt', 'a') as names_file:
     names = names_file.readlines()
 
 with open('Input/Letters/starting_letter.docx') as letter_file:
