@@ -59,14 +59,29 @@ Day 21: Snake game 2/2
         Inheritance
 
 Day 22: Pong
+        Classes 
 
 Day 23: Capstone Project -  Frogger
 
-Day 24:
+Day 24: Mail Merge Project
         Files,Directories,Paths
 
-Day 25:
+Day 25: US Stated Game
         Working with CVS Data
 
-Day 26:
+Day 26: Nato Alphabet Translator
+        List Comprehension
+
+Day27: 
         Tkinter, *args, **kwargs and Creating GUI's
+
+Day 28  Pomodoro Timer
+        Tkinter and Dynamic Typing
+
+Day 29  Password Manager
+        Building a GUI
+
+Day 30  Adding exception handling to the Password manager/adding search function
+        Working with JSON DATA, Exception handling
+
+
