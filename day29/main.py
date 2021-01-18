@@ -1,7 +1,8 @@
 import tkinter
 from tkinter import messagebox
 import random
-#import pyperclip
+import json
+# import pyperclip
 STARTING_VALUE = 'brendandotm@gmail.com'
 
 
@@ -17,7 +18,7 @@ def generate_password():
     random.shuffle(password_list)
     password = ''.join(password_list)
     pass_ent.insert(0, password)
-    #pyperclip.copy(password)
+    # pyperclip.copy(password)
 
 
 def layout():
@@ -36,16 +37,28 @@ def save():
     website = web_ent.get()
     email = use_ent.get()
     password = pass_ent.get()
-    info_string = f'{website} | {email} | {password}\n'
+    new_data = {
+        website: {
+            'email': email,
+            'password': password,
+        }
+    }
 
     if len(website) == 0 or len(password) == 0:
         messagebox.showinfo(message="Please don't leave any fields empty!")
     else:
-        is_ok = messagebox.askokcancel(message=f'You entered the following\n\n{email}\n{password}\n\nReady to save?')
-        if is_ok:
-            with open('data.txt', mode='a') as data_file:
-                data_file.write(info_string)
-            clear_fields()
+        try:
+            with open('data.json', mode='r') as data_file:
+                data = json.load(data_file)
+                data.update(new_data)
+        except FileNotFoundError:
+            with open('data.json', mode='w') as data_file:
+                json.dump(new_data, data_file, indent=4)
+        else:
+            with open('data.json', mode='w') as data_file:
+                json.dump(data, data_file, indent=4)
+
+        clear_fields()
 
 
 def clear_fields():
