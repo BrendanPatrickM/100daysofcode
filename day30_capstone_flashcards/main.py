@@ -60,7 +60,8 @@ right_image = tkinter.PhotoImage(file='images/right.png')
 right_but = tkinter.Button(image=right_image, command=know_word,
                            highlightthickness=0, borderwidth=0)
 wrong_image = tkinter.PhotoImage(file='images/wrong.png')
-wrong_but = tkinter.Button(image=wrong_image, highlightthickness=0,
+wrong_but = tkinter.Button(image=wrong_image, command=next_card,
+                           highlightthickness=0,
                            borderwidth=0)
 
 layout()
