@@ -34,7 +34,8 @@ now = dt.datetime.now()
 today_day = now.day
 today_month = now.month
 data = pandas.read_csv('birthdays.csv')
-data_dict = {(row.month, row.day): [row.recipient, row.email] for (index, row) in data.iterrows()}
+data_dict = {(row.month, row.day): [row.recipient, row.email] for
+             (index, row) in data.iterrows()}
 key = (today_month, today_day)
 
 if key in data_dict:

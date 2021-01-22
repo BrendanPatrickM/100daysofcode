@@ -13,10 +13,11 @@ def check_iss_close():
     response = requests.get(url='http://api.open-notify.org/iss-now.json')
     response.raise_for_status()
     data = response.json()
-    #iss_lon = float(data['iss_position']['longitude'])
-    #iss_lat = float(data['iss_position']['latitude'])
-    iss_lon = MY_LONG
-    iss_lat = MY_LAT
+    iss_lon = float(data['iss_position']['longitude'])
+    iss_lat = float(data['iss_position']['latitude'])
+    # test code
+    # iss_lon = MY_LONG
+    # iss_lat = MY_LAT
 
     if (iss_lon < MY_LONG-5 or iss_lon > MY_LONG+5) or (iss_lat < MY_LAT-5 or iss_lon > MY_LAT+5):
         return False
