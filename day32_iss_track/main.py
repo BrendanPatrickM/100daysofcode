@@ -5,8 +5,8 @@ import time
 
 MY_LAT = 52.844349
 MY_LONG = -8.983000
-MY_EMAIL = ''
-MY_PASSWORD = ''
+MY_EMAIL = 'brendanpython@gmail.com'
+MY_PASSWORD = 'Python1977!!'
 
 
 def check_iss_close():
@@ -52,7 +52,7 @@ def is_dark():
 while True:
     if check_iss_close() and not is_dark():
         print('LOOK FOR ISS')
-        connection = smptlib.SMPT('smpt@gmail.com')
+        connection = smtplib.SMTP('smtp@gmail.com')
         connection.starttls()
         connection.login(MY_EMAIL, MY_PASSWORD)
         connection.sendmail(
