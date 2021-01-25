@@ -12,7 +12,6 @@ def get_quote():
 window = tkinter.Tk()
 window.title("Kanye Says...")
 window.config(padx=50, pady=50)
-
 canvas = tkinter.Canvas(width=300, height=414)
 background_img = tkinter.PhotoImage(file="background.png")
 canvas.create_image(150, 207, image=background_img)
