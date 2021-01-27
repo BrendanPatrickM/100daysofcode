@@ -12,3 +12,9 @@ day28/pomodoro-start/.vscode/settings.json
 .DS_Store
 day30_capstone_flashcards/main.py
 .DS_Store
+.DS_Store
+day34_quizz/.vscode/settings.json
+day34_quizz/__pycache__/data.cpython-39.pyc
+day34_quizz/__pycache__/question_model.cpython-39.pyc
+day34_quizz/__pycache__/quiz_brain.cpython-39.pyc
+day34_quizz/__pycache__/ui.cpython-39.pyc
