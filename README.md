@@ -84,4 +84,17 @@ Day 29  Password Manager
 Day 30  Adding exception handling to the Password manager/adding search function
         Working with JSON DATA, Exception handling
 
+Day 31  working with SMPT automate email sending from csv contact list on contacts birthday
+
+Day 32  ISS Tracker
+        introducing API's - fetch iss position and send email when its overhead
+
+Day 34  Rewrite quizz app with GUI
+        Implement API to have random question bank
+
+Day 35  Rain alert app/twilio
+        api keys - environmental variables
+
+Day 36  Stock watcher with news alert
+
 
