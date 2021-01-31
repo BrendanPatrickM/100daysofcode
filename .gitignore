@@ -22,3 +22,5 @@ day35_apikeys/_ignore_tokens
 day36_stock/main.py
 day36_stock/steps.txt
 day36_stock/keys
+day37_habit_tracker/tokens.txt
+.gitignore
