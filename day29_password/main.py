@@ -3,7 +3,7 @@ from tkinter import messagebox
 import random
 import json
 # import pyperclip
-STARTING_VALUE = 'brendandotm@gmail.com'
+STARTING_VALUE = ''
 
 
 def generate_password():
