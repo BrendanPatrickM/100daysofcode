@@ -10,7 +10,7 @@ def open_graph():
 
 
 def add_pixel():
-    pixela = Pixela()
+    pixela = Pixela(USERNAME, TOKEN)
     page_num = page_entry.get()
     print(type(page_num))
     pixela.add_pixel(page_num)
