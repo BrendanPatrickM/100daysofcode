@@ -27,3 +27,5 @@ day37_habit_tracker/tokens.txt
 day25_csv_pandas/day37_habit_tracker/pixela.py
 day25_csv_pandas/day37_habit_tracker/tokens.txt
 day39_capstone_flight tracker/info.txt
+day39_capstone_flight tracker/__pycache__/data_manager.cpython-39.pyc
+.gitignore
