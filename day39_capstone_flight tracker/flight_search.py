@@ -1,3 +1,4 @@
+from datetime import datetime, timedelta
 import requests
 import os
 from pprint import pprint
@@ -8,6 +9,8 @@ API_KEY = os.environ.get('TEQUILA_KEY')
 class FlightSearch:
     def __init__(self):
         self.headers = {"apikey": API_KEY}
+        self.today = datetime.now().strftime('%d/%m/%Y')
+        self.end_date = (datetime.now() + timedelta(183)).strftime('%d/%m/%Y')
 
     def fetch_code(self, city):
         endpoint = f'{TEQUILA_EP}/locations/query'
@@ -17,15 +20,24 @@ class FlightSearch:
         reply = response.json()
         return reply['locations'][0]['code']
 
-    def find_flights(self):
-        print("finding flights")
+    def find_flights(self, city_code, limit_price):
         endpoint = f'{TEQUILA_EP}/search'
         query = {
             'fly_from': 'LON',
-            'fly_to': 'IE',
-            'date_from': '01/04/2021',
-            'date_to': '05/06/2021',
+            'fly_to': city_code,
+            'date_from': self.today,
+            'date_to': self.end_date,
+            'one_for_city': 1,
+            'one_for_day': 1,
+            'price_to': limit_price
         }
-        response = requests.get(url=endpoint, params=query, headers=headers)
-        pprint(response.text)
-
+        response = requests.get(url=endpoint, params=query, headers=self.headers)
+        
+        try :
+            data = response.json()['data'][0]
+        except IndexError:
+            print('No flights found')
+            return None
+        
+        return (data['price'])
+        
