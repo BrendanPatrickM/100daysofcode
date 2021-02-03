@@ -11,17 +11,13 @@ class DataManager:
         return(self.sheet['prices'])
 
     def update_iata(self, sheet_data):
-        print('here')
         for destination in sheet_data:
             id = str(destination['id'])
-            print(id)
             iata = destination['iataCode']
-            print(iata)
             updated_params = {
                 'price': {
                     'iataCode': iata
                 }
             }
             new_url = f'{endpoint}/{id}'
-            response = requests.put(url=new_url, json=updated_params)
-            print(response.text)
+            requests.put(url=new_url, json=updated_params)
