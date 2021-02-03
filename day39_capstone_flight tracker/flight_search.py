@@ -1,7 +1,7 @@
 from datetime import datetime, timedelta
 import requests
 import os
-from pprint import pprint
+
 TEQUILA_EP = 'https://tequila-api.kiwi.com'
 API_KEY = os.environ.get('TEQUILA_KEY')
 
@@ -14,30 +14,37 @@ class FlightSearch:
 
     def fetch_code(self, city):
         endpoint = f'{TEQUILA_EP}/locations/query'
-        # headers = {"apikey": API_KEY}
         query = {'term': city, 'location_types': 'city'}
-        response = requests.get(url=endpoint, params=query, headers=self.headers)
+        response = requests.get(url=endpoint, params=query,
+                                headers=self.headers)
         reply = response.json()
         return reply['locations'][0]['code']
 
-    def find_flights(self, city_code, limit_price):
+    def find_flights(self, city_code, limit_price, origin):
         endpoint = f'{TEQUILA_EP}/search'
         query = {
-            'fly_from': 'LON',
+            'fly_from': origin,
             'fly_to': city_code,
             'date_from': self.today,
             'date_to': self.end_date,
+            "nights_in_dst_from": 7,
+            "nights_in_dst_to": 28,
+            "flight_type": "round",
             'one_for_city': 1,
-            'one_for_day': 1,
-            'price_to': limit_price
+            "max_stopovers": 0,
+            'price_to': limit_price,
+            "curr": "GBP"
         }
-        response = requests.get(url=endpoint, params=query, headers=self.headers)
-        
-        try :
+        response = requests.get(url=endpoint, params=query,
+                                headers=self.headers)
+
+        try:
             data = response.json()['data'][0]
         except IndexError:
-            print('No flights found')
+            print(f'No flights found to {city_code}')
             return None
-        
-        return (data['price'])
-        
+
+        city_to = data['cityTo']
+        price = data['price']
+        print(f"{city_to}: £{price}")
+        return data['deep_link']
