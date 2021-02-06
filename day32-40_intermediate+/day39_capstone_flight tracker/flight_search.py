@@ -1,6 +1,7 @@
 from datetime import datetime, timedelta
 import requests
 import os
+from pprint import pprint
 
 TEQUILA_EP = 'https://tequila-api.kiwi.com'
 API_KEY = os.environ.get('TEQUILA_KEY')
@@ -18,6 +19,7 @@ class FlightSearch:
         response = requests.get(url=endpoint, params=query,
                                 headers=self.headers)
         reply = response.json()
+        #pprint(reply)
         return reply['locations'][0]['code']
 
     def find_flights(self, city_code, limit_price, origin):
