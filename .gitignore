@@ -39,3 +39,15 @@ day15-31_intermediate/day16/__pycache__/money_machine.cpython-39.pyc
 day15-31_intermediate/day20_21 snake/__pycache__/food.cpython-39.pyc
 day15-31_intermediate/day20_21 snake/__pycache__/scoreboard.cpython-39.pyc
 day15-31_intermediate/day20_21 snake/__pycache__/snake.cpython-39.pyc
+day32-40_intermediate+/day35_apikeys/_ignore_tokens
+
+day32-40_intermediate+/day36_stock/keys
+.gitignore
+day32-40_intermediate+/day37_habit_tracker/tokens.txt
+day32-40_intermediate+/day38_workout_tracker/main.py
+day32-40_intermediate+/day39_capstone_flight tracker/main.py
+.gitignore
+.gitignore
+day32-40_intermediate+/day39_capstone_flight tracker/.vscode/settings.json
+day32-40_intermediate+/day39_capstone_flight tracker/info.txt
+day32-40_intermediate+/day38_workout_tracker/.vscode/settings.json
