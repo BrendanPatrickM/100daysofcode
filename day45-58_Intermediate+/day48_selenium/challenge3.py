@@ -15,4 +15,3 @@ email.send_keys('fake@email.com')
 name.send_keys(Keys.ENTER)
 
 # driver.quit()
-
