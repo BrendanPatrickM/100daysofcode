@@ -46,23 +46,31 @@ notifications_button.click()
 sleep(2)
 
 # click like
-
-for n in range(10):
+print('ready for loop')
+for n in range(100):
 
     # Add a 1 second delay between likes.
     sleep(1)
-
     try:
         print("called")
         like_button = driver.find_element_by_xpath(
             '//*[@id="content"]/div/div[1]/div/main/div[1]/div/div/div[1]/div/div[2]/div[4]/button')
         like_button.click()
-
+        
     except ElementClickInterceptedException:
+        print('exception')
+        print('trying superlike')
         try:
-            match_popup = driver.find_element_by_css_selector(".itsAMatch a")
-            match_popup.click()
-
-        # Catches the cases where the "Like" button has not yet loaded, so wait 2 seconds before retrying.
+            super_like = driver.find_element_by_xpath('//*[@id="modal-manager"]/div/div/button[2]')
+            super_like.click()
         except NoSuchElementException:
-            sleep(2)
+            try:
+                print('trying match popup')
+                match_popup = driver.find_element_by_css_selector(".itsAMatch a")
+                match_popup.click()
+
+            except NoSuchElementException:
+                sleep(2)
+
+
+
