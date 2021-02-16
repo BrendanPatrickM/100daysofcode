@@ -5,8 +5,8 @@ import os
 
 USERNAME = os.environ.get('USER')
 PASSWORD = os.environ.get('PASSWORD')
-TARGET_UP = 200
-TARGET_DOWN = 10
+TARGET_UP = 10
+TARGET_DOWN = 200
 DRIVER_PATH = "/Users/brendan/Development/chromedriver"
 
 
@@ -38,7 +38,6 @@ class TwitterBot():
 
         print(self.down)
         print(self.up)
-        self.driver.quit()
         return [self.down, self.up]
 
     def tweet_at_provider(self):
@@ -75,12 +74,13 @@ class TwitterBot():
             'div[2]/div[3]'
             )
         tweet_button.click()
+        self.driver.quit()
 
 
 # LOGIC
 bot = TwitterBot()
 actual_speeds = bot.get_internet_speed()
-if actual_speeds[0] < TARGET_DOWN:
+if float(actual_speeds[0]) < TARGET_DOWN:
     bot.tweet_at_provider()
 else:
     print('All Good')
