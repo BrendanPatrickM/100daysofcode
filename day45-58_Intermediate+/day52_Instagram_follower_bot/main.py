@@ -13,7 +13,6 @@ SIMILAR_ACCOUNT = 'https://www.instagram.com/dji_official/'
 class InstaFollower():
     def __init__(self):
         self.driver = webdriver.Chrome(executable_path=DRIVER_PATH)
-        print('initialising')
 
     def login(self):
         self.driver.get('https://www.instagram.com')
@@ -34,7 +33,23 @@ class InstaFollower():
         notifications_no.click()
 
     def find_followers(self):
-        print('find step')
+        print('find step') 
+        self.driver.get(SIMILAR_ACCOUNT)
+        sleep(1)
+        followers = self.driver.find_element_by_xpath(
+            '//*[@id="react-root"]/section/main/div/header/section/ul/li[2]/a'
+            )
+        followers.click()
+        sleep(2)
+        # on the followers modal window
+        modal = self.driver.find_element_by_xpath(
+            '/html/body/div[4]/div/div/div[2]'
+            )
+        for i in range(10):
+            self.driver.execute_script(
+                "arguments[0].scrollTop = arguments[0].scrollHeight", modal
+                )
+            sleep(2)
 
     def follow(self):
         print('follow step')
@@ -42,3 +57,4 @@ class InstaFollower():
 
 insta_bot = InstaFollower()
 insta_bot.login()
+insta_bot.find_followers()
