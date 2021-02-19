@@ -1,5 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+from selenium.common.exceptions import ElementClickInterceptedException
 from time import sleep
 import os
 
@@ -33,7 +34,6 @@ class InstaFollower():
         notifications_no.click()
 
     def find_followers(self):
-        print('find step') 
         self.driver.get(SIMILAR_ACCOUNT)
         sleep(1)
         followers = self.driver.find_element_by_xpath(
@@ -45,16 +45,21 @@ class InstaFollower():
         modal = self.driver.find_element_by_xpath(
             '/html/body/div[4]/div/div/div[2]'
             )
-        for i in range(10):
+        for i in range(1):
             self.driver.execute_script(
                 "arguments[0].scrollTop = arguments[0].scrollHeight", modal
                 )
             sleep(2)
 
     def follow(self):
-        print('follow step')
+        # this returns a list of selenium objects, each a follow button`
+        all_buttons = self.driver.find_elements_by_css_selector("li button")
+        for button in all_buttons:
+            button.click()
+            sleep(1)
 
 
 insta_bot = InstaFollower()
 insta_bot.login()
 insta_bot.find_followers()
+insta_bot.follow()
