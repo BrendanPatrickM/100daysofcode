@@ -45,18 +45,34 @@ class InstaFollower():
         modal = self.driver.find_element_by_xpath(
             '/html/body/div[4]/div/div/div[2]'
             )
-        for i in range(1):
+        for i in range(10):
             self.driver.execute_script(
                 "arguments[0].scrollTop = arguments[0].scrollHeight", modal
                 )
-            sleep(2)
+            sleep(1)
 
     def follow(self):
+        n = 0
+        new = 0
+
         # this returns a list of selenium objects, each a follow button`
         all_buttons = self.driver.find_elements_by_css_selector("li button")
         for button in all_buttons:
-            button.click()
+            try:
+                button.click()
+                print(f'{n} followed')
+                new += 1
+
+            except ElementClickInterceptedException:
+                cancel_button = self.driver.find_element_by_xpath(
+                    '/html/body/div[5]/div/div/div/div[3]/button[2]'
+                    )
+                cancel_button.click()
+                print(f'{n} already a follower')
+
+            n += 1
             sleep(1)
+        print(f'{new} new follows from this run')
 
 
 insta_bot = InstaFollower()
