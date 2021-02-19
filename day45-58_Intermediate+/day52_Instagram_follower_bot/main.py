@@ -33,8 +33,6 @@ class InstaFollower():
         )
         notifications_no.click()
 
-
-
     def find_followers(self):
         print('find step')
 
