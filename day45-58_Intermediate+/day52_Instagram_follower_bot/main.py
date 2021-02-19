@@ -73,6 +73,7 @@ class InstaFollower():
             n += 1
             sleep(1)
         print(f'{new} new follows from this run')
+        self.driver.quit()
 
 
 insta_bot = InstaFollower()
