@@ -58,3 +58,6 @@ day45-58_Intermediate+/day47_amazon_price_tracker/data.txt
 day45-58_Intermediate+/day49_tinder_auto_swiper/info.txt
 day45-58_Intermediate+/info.txt
 day45-58_Intermediate+/day52_Instagram_follower_bot/info.txt
+day45-58_Intermediate+/day55_flask/.vscode/settings.json
+.gitignore
+day45-58_Intermediate+/day55_flask/__pycache__/main.cpython-39.pyc
